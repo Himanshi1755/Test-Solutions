@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+ <script>
+ let key = prompt("Enter input");
+ let value = prompt("Enter input");
+
+ localStorage.setItem(key,value)
+
+ document.write(`the value at ${key} is ${localStorage.getItem(key)}`);
+
+ if(key =='red' || key=='blue'){
+    localStorage.removeItem(key)
+ }
+ if(key == 0){
+    localStorage.clear()
+ } 
+ 
+
+ </script>
+</body>
+</html>
