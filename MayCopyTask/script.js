@@ -23,12 +23,6 @@ if (!localStorage.getItem("students")) {
 localStorage.removeItem("students");
 localStorage.setItem("students", JSON.stringify(Student_details));
 
-///-------------------------
-// const headerDiv = document.createElement("div");
-// headerDiv.setAttribute("class", "header_div")
-// headerDiv.style.width="100px";
-// headerDiv.style.height = "100px";
-// headerDiv.style.border="1px solid black"
 
 let container = document.getElementById("dropdown-container");
 let dropdown = document.createElement("div");
@@ -61,19 +55,7 @@ yearSelect.id = "yearSelect";
 yearSelect.style.marginBottom = "70px"
 yearSelect.style.marginTop = "70px"
 
-// function filterStudent() {
-//     const selectDept = deptselect.value;
-//     const selectYear = yearSelect.value;
-//     const student = JSON.parse(localStorage.getItem("students"));
 
-//     const filter = student.filter((stu) => {
-//         const deptMatch = !selectDept || stu.branch === selectDept;
-//         const yearMatch = !selectYear || stu.passing_year == selectYear;
-//             return deptMatch && yearMatch;
-//     });
-
-//     buildCard(filter);
-// };
 function filterStudent() {
     let selectedDept = deptselect.value;
     let selectedYear = yearSelect.value;
@@ -164,15 +146,7 @@ function buildCard(filter = null) {
         editButton.onclick = () => {
             let main = document.getElementById('main-container')
             main.innerHTML = '';
-            // container.innerHTML = '';
-            //   editform();
-            // const formdiv = document.createElement("div");
-            // formdiv.setAttribute("class", "formdiv");
-            // formdiv.style.border = '2px solid black';
-            // formdiv.style.height = "100px";
-            // formdiv.style.padding = "20px";
-            // formdiv.style.width = "350px";
-            // formdiv.style.margin = "100px auto";
+          
 
             let form = document.createElement('form');
             form.style.display = 'flex'
@@ -236,38 +210,6 @@ function buildCard(filter = null) {
             main.append(form);
         };
 
-
-//     form.onsubmit = (x) => {
-//     x.preventDefault();
-
-//     let allStudents = JSON.parse(localStorage.getItem("students"));
-    
-//     // Find student by unique Roll No (you can also use student.Id)
-//     let studentIndex = allStudents.findIndex(s => s.RollNo === student.RollNo);
-
-//     if (studentIndex !== -1) {
-//         allStudents[studentIndex].name = input.value || student.name;
-//         allStudents[studentIndex].branch = inpt1.value || student.branch;
-//         allStudents[studentIndex].RollNo = input3.value || student.RollNo;
-//         allStudents[studentIndex].passing_year = inpt2.value || student.passing_year;
-
-//         localStorage.setItem("students", JSON.stringify(allStudents));
-//         buildCard();
-//     }
-// };
-
-        // btn.addEventListener('click', () => {
-        //     // let getdata = localStorage.getItem('students')
-        //     // const getdata  = JSON.parse(localStorage.getItem("students"))
-        //     let getindex = getdata.finIndex(s => s.RollNo === student.RollNo)
-
-        //     if (getindex1 !== -1) {
-        //         data[getindex].name = inpt.value
-        //         data[getindex].name = inpt1.value
-        //         data[getindex].name = inpt2.value
-        //     }
-        //     localStorage.setItem("students", JSON.stringify(data));
-        // })
         let deleteButton = document.createElement("button");
         deleteButton.textContent = "DELETE";
         deleteButton.className = "delete_btn";
@@ -304,22 +246,3 @@ function buildCard(filter = null) {
     main.appendChild(cardContainer);
 }
 buildCard();
-
-// function editForm(){
-// const fields = ["name", "class", "RollNo", "passing_year"];
-
-// let editData = prompt(`Edit ? (name,class,RollNo,passing_year)`);
-
-// if (editData && fields.includes(editData)) {
-//     let newValue = prompt(`Enter ${editData}`, student[editData]);
-
-//     if (newValue) {
-//         data[index][editData] = newValue;
-//         localStorage.setItem("students", JSON.stringify(data));
-//         buildCard();
-//     }
-// }
-// else {
-//     alert("Invalid field name entered!");
-// }
-// }
